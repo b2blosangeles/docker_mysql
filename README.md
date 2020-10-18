@@ -14,7 +14,7 @@ docker run -d \
   --name mysql_aa \
   mysql
 
-check password: docker logs mysqlCon
+check password: docker logs mysql_aa
 
 docker exec -it mysql_aa mysql -uroot -p
 
