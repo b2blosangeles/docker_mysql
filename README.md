@@ -14,6 +14,8 @@ docker run -d \
   --name mysql_aa \
   mysql
 
+check password: docker logs mysqlCon
+
 docker exec -it mysql_aa mysql -uroot -p
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'NewPassword';
