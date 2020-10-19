@@ -15,7 +15,7 @@ docker run -d \
   mysql
 
 check password: docker logs mysql_aa
-(docker logs mysql1 2>&1 | grep GENERATED)
+(docker logs mysql_aa 2>&1 | grep GENERATED)
 
 docker exec -it mysql_aa mysql -uroot -p
 
