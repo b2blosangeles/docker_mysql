@@ -1,5 +1,5 @@
 {
   "type"        : "database",
   "ports"       : [3000],
-  "dockerFile"  : "dockerFileA"
+  "dockerFile"  : "dockerFileMYSQL"
 }
