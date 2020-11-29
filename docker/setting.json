@@ -1,5 +1,5 @@
 {
   "type"        : "database",
-  "ports"       : [3006],
+  "ports"       : [3306],
   "dockerFile"  : "dockerFile"
 }
