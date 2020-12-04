@@ -8,4 +8,4 @@ docker container stop <%=@siteContainer %>
 
 docker container rm <%=@siteContainer %>
 
-docker run -d --env MYSQL_USER=jxu@10.10.10.254 --env MYSQL_PASSWORD=1234 -e MYSQL_ROOT_PASSWORD=<%=@randomKey%> <%=@cmdPorts%> -v "<%=@dockerCodePath%>":/var/_localApp -v "<%=@dockerDataPath%>":/var/lib/mysql  --network network_easydocker --name <%=@siteContainer %>  <%=@siteImage %> 
+docker run -d --env MYSQL_USER=jxu --env MYSQL_PASSWORD=1234 -e MYSQL_ROOT_PASSWORD=<%=@randomKey%> <%=@cmdPorts%> -v "<%=@dockerCodePath%>":/var/_localApp -v "<%=@dockerDataPath%>":/var/lib/mysql  --network network_easydocker --name <%=@siteContainer %>  <%=@siteImage %> 
