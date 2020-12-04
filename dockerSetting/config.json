@@ -2,5 +2,9 @@
   "type"        : "database",
   "ports"       : [3306],
   "additional"  : [
+    {
+      "fieldName" : "rootPassword",
+      "prompty"   : "Root Password"
+    } 
   ]
 }
