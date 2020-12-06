@@ -1,6 +1,6 @@
 <template>
     <div>  
-      adupter main - {{item.serverType}}
+      adupter body - {{item.serverType}}
     </div>
 </template>
  
