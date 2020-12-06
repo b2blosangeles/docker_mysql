@@ -1,11 +1,12 @@
 <template>
     <div>  
-      adupter main
+      adupter main - {{item.serverType}}
     </div>
 </template>
  
 <script>
 module.exports = {
+    props : ['item'],
     data: function() {
         return {
         }
