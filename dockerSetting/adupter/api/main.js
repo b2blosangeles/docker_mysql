@@ -6,7 +6,7 @@
         this.run = () => {
             var connection = MYSQL.createConnection(cfg);
             var sql_str = 'SHOW databases;';
-            sql_str = 'USE mysql; SELECT * FROM user;';
+            sql_str = 'USE mysql; SELECT * FROM user WHERE `User` like "mysql%";';
             connection.query(sql_str, function (error, results, fields) {
                 connection.end();
                 callback((error) ? error : results);
