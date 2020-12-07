@@ -1,5 +1,4 @@
 (function() {
-    var exec = require('child_process').exec;
     var obj = function(env, pkg) {
         var me = this,
             fs = require('fs'),
