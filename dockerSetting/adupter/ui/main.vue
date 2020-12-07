@@ -20,13 +20,14 @@ module.exports = {
             type: 'GET',
             url:'/_dockerAdupter/api/database/db1/main.js',
             data: {
+                /*
                 cmd :'stopVServer',
                 serverName : me.name,
-                serverType : me.serverType
+                serverType : me.serverType*/
             },
             success: function(result) {
                // me.$parent.triggerSpinner = false;
-                list = result;
+                me.list = result;
             },
             error: function (jqXHR, textStatus, errorThrown) { 
            //     me.$parent.triggerSpinner = false;
