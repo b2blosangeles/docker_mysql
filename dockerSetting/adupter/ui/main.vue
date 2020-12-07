@@ -24,21 +24,32 @@ module.exports = {
         me.getAllDatabase(url);
     },
     methods :{
-        getAllDatabase(url) {
-            let me = this;
-            // me.root.triggerSpinner = true;
+        _get(url, param, calback) {
             $.ajax({
                 type: 'GET',
                 url:url,
-                data: {},
+                data: param,
                 success: function(result) {
-                   me.root.triggerSpinner = false;
+                   // me.root.triggerSpinner = false;
+                    calback(result);
                    me.list = result;
                 },
                 error: function (jqXHR, textStatus, errorThrown) { 
-                   me.root.triggerSpinner = false;;
+                   // me.root.triggerSpinner = false;
+                   calback(null)
                 },
                 dataType: 'JSON'
+            });
+        },
+        _post() {
+        }
+        isAppDBReady () {
+            
+        },
+        getAllDatabase(url) {
+            let me = this;
+            me._get(url, {}, function(data) {
+                me.list = data;
             });
         }
     },
