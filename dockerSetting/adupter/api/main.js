@@ -1,7 +1,7 @@
 (function() {
     var obj = function(path, cfg) {
         this.run = (callback) => {
-            callback(path);
+            callback(cfg);
         }
     }
     module.exports = obj;
