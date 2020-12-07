@@ -13,31 +13,35 @@ module.exports = {
     props : ['item'],
     data: function() {
         return {
+            root :  this.$parent.root,
             list : []
         }
     },
     mounted () {
         let me = this;
-        $.ajax({
-            type: 'GET',
-            url:'/_dockerAdupter/api/database/db1/main.js',
-            data: {
-                /*
-                cmd :'stopVServer',
-                serverName : me.name,
-                serverType : me.serverType*/
-            },
-            success: function(result) {
-               // me.$parent.triggerSpinner = false;
-                me.list = result;
-            },
-            error: function (jqXHR, textStatus, errorThrown) { 
-           //     me.$parent.triggerSpinner = false;
-            },
-            dataType: 'JSON'
-        });
+        // '/_dockerAdupter/api/database/db1/main.js'
+        let url = '/_dockerAdupter/api/' + item.serverType + '/' + item.name + '/main.js'
+        me.getAllDatabase(url);
     },
     methods :{
+        getAllDatabase(url) {
+            let me = this;
+            me.root.triggerSpinner = true;
+            return true;
+            $.ajax({
+                type: 'GET',
+                url:url,
+                data: {},
+                success: function(result) {
+                   me.root.triggerSpinner = false;
+                   me.list = result;
+                },
+                error: function (jqXHR, textStatus, errorThrown) { 
+                   me.root.triggerSpinner = false;;
+                },
+                dataType: 'JSON'
+            });
+        }
     },
     components: VUEApp.loadComponents({
         LOAD    : {
