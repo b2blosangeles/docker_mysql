@@ -43,7 +43,8 @@ module.exports = {
         _post() {
         },
         isAppUserReady () {
-            return (this.appUserList.length) ?  true : false;
+            return false;
+           // return (this.appUserList.length) ?  true : false;
         },
         getAllDatabase(url) {
             let me = this;
