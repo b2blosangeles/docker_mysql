@@ -1,7 +1,8 @@
 (function() {
-    var obj = function(path, cfg) {
+    var obj = function(path, pkg, cfg) {
+        
         this.run = (callback) => {
-            callback(cfg);
+            callback('cfg');
         }
     }
     module.exports = obj;
