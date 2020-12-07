@@ -32,7 +32,6 @@ module.exports = {
                 success: function(result) {
                    // me.root.triggerSpinner = false;
                     calback(result);
-                   me.list = result;
                 },
                 error: function (jqXHR, textStatus, errorThrown) { 
                    // me.root.triggerSpinner = false;
