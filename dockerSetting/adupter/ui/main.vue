@@ -1,6 +1,6 @@
 <template>
     <div class="adupterBody border border-info br-3 m-1 p-3 rounded-lg alert-info">  
-      adupter body <button class="btn btn-warning" v-if="isAppUser()">Add User</button>
+      adupter body <button class="btn btn-warning" v-if="!isAppUserReady()">Add User</button>
       <hr/> 
       {{item}}
       <hr/>
