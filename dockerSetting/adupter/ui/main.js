@@ -24,5 +24,5 @@ module.exports = {
 </script>
  
 <style>
-.adupterBody { border: 2px solid #333333 }
+.adupterBody { border: 1px solid #333333; padding : 0.5rem }
 </style>
