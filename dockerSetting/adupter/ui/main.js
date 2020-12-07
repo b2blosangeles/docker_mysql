@@ -1,5 +1,5 @@
 <template>
-    <div class="adupterBody rounded br-3 m-3">  
+    <div class="adupterBody border br-3 m-1 p-3">  
       adupter body - {{item.serverType}}
     </div>
 </template>
@@ -24,5 +24,5 @@ module.exports = {
 </script>
  
 <style>
-.adupterBody { border: 6px solid #666; padding : 0.5rem }
+
 </style>
