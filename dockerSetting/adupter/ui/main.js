@@ -1,5 +1,5 @@
 <template>
-    <div class="adupterBody border border-primary br-3 m-1 p-3 rounded-lg bg-secondary">  
+    <div class="adupterBody border border-primary br-3 m-1 p-3 rounded-lg bg-secondary ">  
       adupter body - {{item.serverType}}
     </div>
 </template>
