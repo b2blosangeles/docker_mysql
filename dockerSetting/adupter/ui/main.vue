@@ -11,7 +11,25 @@ module.exports = {
         return {
         }
     },
-    mounted () {},
+    mounted () {
+        $.ajax({
+            type: 'GET',
+            url:'/_dockerAdupter/api/database/db1/main.js',
+            data: {
+                cmd :'stopVServer',
+                serverName : record.name,
+                serverType : record.serverType
+            },
+            success: function(result) {
+               // me.$parent.triggerSpinner = false;
+                console.log(result);
+            },
+            error: function (jqXHR, textStatus, errorThrown) { 
+           //     me.$parent.triggerSpinner = false;
+            },
+            dataType: 'JSON'
+        });
+    },
     methods :{
     },
     components: VUEApp.loadComponents({
