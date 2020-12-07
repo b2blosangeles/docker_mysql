@@ -1,6 +1,6 @@
 (function() {
-    var obj = function(path, callback) {
-        this.run = () => {
+    var obj = function(path, cfg) {
+        this.run = (callback) => {
             callback(path);
         }
     }
