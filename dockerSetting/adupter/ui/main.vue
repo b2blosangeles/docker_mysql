@@ -1,6 +1,6 @@
 <template>
     <div class="adupterBody border border-info br-3 m-1 p-3 rounded-lg alert-info">  
-      adupter body 
+      adupter body <button class="btn btn-warning" v-if="isAppUser()">Add User</button>
       <hr/> 
       {{item}}
       <hr/>
@@ -14,7 +14,7 @@ module.exports = {
     data: function() {
         return {
             root :  this.$parent.root,
-            list : []
+            appUserList : []
         }
     },
     mounted () {
@@ -43,13 +43,13 @@ module.exports = {
         },
         _post() {
         },
-        isAppDBReady () {
-            
+        isAppUserReady () {
+            return (this.appUserList.length) ?  true : false;
         },
         getAllDatabase(url) {
             let me = this;
             me._get(url, {}, function(data) {
-                me.list = data;
+                me.appUserList = data;
             });
         }
     },
