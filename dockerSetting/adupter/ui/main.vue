@@ -12,13 +12,14 @@ module.exports = {
         }
     },
     mounted () {
+        let me = this;
         $.ajax({
             type: 'GET',
             url:'/_dockerAdupter/api/database/db1/main.js',
             data: {
                 cmd :'stopVServer',
-                serverName : record.name,
-                serverType : record.serverType
+                serverName : me.name,
+                serverType : me.serverType
             },
             success: function(result) {
                // me.$parent.triggerSpinner = false;
