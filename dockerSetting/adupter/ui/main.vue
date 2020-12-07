@@ -1,6 +1,8 @@
 <template>
     <div class="adupterBody border border-info br-3 m-1 p-3 rounded-lg alert-info">  
       adupter body - {{item.serverType}}
+      <hr/>
+      {{list}}
     </div>
 </template>
  
@@ -9,6 +11,7 @@ module.exports = {
     props : ['item'],
     data: function() {
         return {
+            list : []
         }
     },
     mounted () {
@@ -23,7 +26,7 @@ module.exports = {
             },
             success: function(result) {
                // me.$parent.triggerSpinner = false;
-                console.log(result);
+                list = result;
             },
             error: function (jqXHR, textStatus, errorThrown) { 
            //     me.$parent.triggerSpinner = false;
