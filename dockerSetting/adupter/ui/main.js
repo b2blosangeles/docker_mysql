@@ -24,5 +24,5 @@ module.exports = {
 </script>
  
 <style>
-
+.adupterBody { color: #000 }
 </style>
