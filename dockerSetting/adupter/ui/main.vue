@@ -48,7 +48,7 @@ module.exports = {
         getAllDatabase(url) {
             let me = this;
             me._get(url, {}, function(data) {
-                me.appUserList = data;
+                me.appUserList = data[1];
             });
         }
     },
