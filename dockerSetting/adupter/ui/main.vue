@@ -27,7 +27,6 @@ module.exports = {
         getAllDatabase(url) {
             let me = this;
             me.root.triggerSpinner = true;
-            return true;
             $.ajax({
                 type: 'GET',
                 url:url,
