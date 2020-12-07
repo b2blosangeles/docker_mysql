@@ -1,5 +1,5 @@
 <template>
-    <div class="adupterBody rounded br-3">  
+    <div class="adupterBody rounded br-3 m-3">  
       adupter body - {{item.serverType}}
     </div>
 </template>
