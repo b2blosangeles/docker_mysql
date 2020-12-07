@@ -1,7 +1,7 @@
 (function() {
-    var obj = function(path, res) {
+    var obj = function(path, callback) {
         this.run = () => {
-            res.send(path);
+            callback(path);
         }
     }
     module.exports = obj;
