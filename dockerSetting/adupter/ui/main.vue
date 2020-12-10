@@ -50,7 +50,7 @@ module.exports = {
             let me = this;
             me._get(url, {}, function(data) {
                 console.log(data);
-                me.appUserList = data[1];
+                me.appUserList = data;
             });
         }
     },
