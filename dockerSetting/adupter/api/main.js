@@ -2,7 +2,7 @@
     var obj = function(callback) {
         var me = this,
             crowdProcess = require(__dirname + '/vendor/crowdProcess/crowdProcess.js'),
-            CP = new pkg.crowdProcess(),
+            CP = new crowdProcess(),
             MYSQL = require(__dirname + '/vendor/mysql/node_modules/mysql');
         
         this.run = () => {
