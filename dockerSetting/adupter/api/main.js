@@ -13,7 +13,6 @@
                 password: dockerEnv.rootKey.key,
                 multipleStatements: true
             };
-            
             var connection = MYSQL.createConnection(cfg);
             var sql_str = 'SHOW databases;';
             sql_str = 'USE mysql; CREATE USER IF NOT EXISTS "appUser11"@"%" IDENTIFIED BY "password";';
