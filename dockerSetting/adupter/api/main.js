@@ -8,8 +8,8 @@
         this.run = (dockerEnv) => {
             var cfg = {
                 host: dockerEnv.main_ip,
+                port : dockerEnv.port,
                 user: 'root',
-                port : '13306',
                 password: dockerEnv.rootKey.key,
                 multipleStatements: true
             };
