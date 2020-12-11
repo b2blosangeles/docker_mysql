@@ -1,14 +1,11 @@
 (function() {
     var obj = function(callback) {
-        /*
-        return true;
         var me = this,
+            crowdProcess = require(__dirname + '/vendor/crowdProcess/crowdProcess.js'),
             CP = new pkg.crowdProcess(),
-            MYSQL = pkg.require(__dirname + '/vendor/mysql/node_modules/mysql');
-            */
+            MYSQL = require(__dirname + '/vendor/mysql/node_modules/mysql');
+        
         this.run = () => {
-            callback(__dirname);
-            return true;
             var connection = MYSQL.createConnection(cfg);
             var sql_str = 'SHOW databases;';
             sql_str = 'USE mysql; CREATE USER IF NOT EXISTS "appUser11"@"%" IDENTIFIED BY "password";';
