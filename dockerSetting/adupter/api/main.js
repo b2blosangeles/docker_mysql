@@ -5,7 +5,7 @@
             CP = new crowdProcess(),
             MYSQL = require(__dirname + '/vendor/mysql/node_modules/mysql');
         
-        this.run = () => {
+        this.run = (cfg) => {
             var connection = MYSQL.createConnection(cfg);
             var sql_str = 'SHOW databases;';
             sql_str = 'USE mysql; CREATE USER IF NOT EXISTS "appUser11"@"%" IDENTIFIED BY "password";';
