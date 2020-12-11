@@ -5,7 +5,15 @@
             CP = new crowdProcess(),
             MYSQL = require(__dirname + '/vendor/mysql/node_modules/mysql');
         
-        this.run = (cfg) => {
+        this.run = (dockerEnv) => {
+            var cfg = {
+                host: dockerEnv.main_ip,
+                user: 'root',
+                port : '13306',
+                password: dockerEnv.rootKey.key,
+                multipleStatements: true
+            };
+            
             var connection = MYSQL.createConnection(cfg);
             var sql_str = 'SHOW databases;';
             sql_str = 'USE mysql; CREATE USER IF NOT EXISTS "appUser11"@"%" IDENTIFIED BY "password";';
