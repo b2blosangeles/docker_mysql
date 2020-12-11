@@ -1,9 +1,14 @@
 (function() {
-    var obj = function(myPath, pkg, cfg, callback) {
+    var obj = function(callback) {
+        /*
+        return true;
         var me = this,
             CP = new pkg.crowdProcess(),
-            MYSQL = pkg.require(myPath + '/vendor/mysql/node_modules/mysql');
+            MYSQL = pkg.require(__dirname + '/vendor/mysql/node_modules/mysql');
+            */
         this.run = () => {
+            callback(__dirname);
+            return true;
             var connection = MYSQL.createConnection(cfg);
             var sql_str = 'SHOW databases;';
             sql_str = 'USE mysql; CREATE USER IF NOT EXISTS "appUser11"@"%" IDENTIFIED BY "password";';
