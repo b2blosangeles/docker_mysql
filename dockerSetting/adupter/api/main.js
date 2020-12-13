@@ -1,18 +1,18 @@
 (function() {
-    var obj = function(callback) {
+    var obj = function() {
         var me = this,
             crowdProcess = require(__dirname + '/vendor/crowdProcess/crowdProcess.js'),
             CP = new crowdProcess(),
             MYSQL = require(__dirname + '/vendor/mysql/node_modules/mysql');
         
-        this.call = (opt, dockerEnv) => {
+        this.call = (opt, dockerEnv, callback) => {
             try {
-                me[opt](dockerEnv);
+                me[opt](dockerEnv, callback);
             } catch(e) {
                 callback(__dirname + ':' + e.message);
             }  
         }      
-        this.run = (dockerEnv) => {
+        this.run = (dockerEnv, callback) => {
             try {
                 var cfg = {
                     host: dockerEnv.main_ip,
@@ -34,7 +34,7 @@
                 callback(__dirname + ':' + e.message);
             }
         }
-        this.checkUserSetting = (dockerEnv) => {
+        this.checkUserSetting = (dockerEnv, callback) => {
             try {
                 var cfg = {
                     host: dockerEnv.main_ip,
