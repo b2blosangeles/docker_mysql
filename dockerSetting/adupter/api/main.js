@@ -5,20 +5,20 @@
             CP = new crowdProcess(),
             MYSQL = require(__dirname + '/vendor/mysql/node_modules/mysql');
         
-        this.call = (opt, dockerEnv, callback) => {
+        this.call = (opt, inData, callback) => {
             try {
-                me[opt](dockerEnv, callback);
+                me[opt](inData, callback);
             } catch(e) {
                 callback(__dirname + ':' + e.message);
             }  
         }      
-        this.run = (dockerEnv, callback) => {
+        this.run = (inData, callback) => {
             try {
                 var cfg = {
-                    host: dockerEnv.main_ip,
-                    port : parseInt(dockerEnv.siteConfig.unidx * 10000) + parseInt(dockerEnv.siteConfig.docker.ports[0]),
+                    host: inData.dockerEnv.main_ip,
+                    port : parseInt(inData.dockerEnv.siteConfig.unidx * 10000) + parseInt(inData.dockerEnv.siteConfig.docker.ports[0]),
                     user: 'root',
-                    password: dockerEnv.rootKey.key,
+                    password: inData.dockerEnv.rootKey.key,
                     multipleStatements: true
                 };
                 var connection = MYSQL.createConnection(cfg);
@@ -34,13 +34,13 @@
                 callback(__dirname + ':' + e.message);
             }
         }
-        this.checkUserSetting = (dockerEnv, callback) => {
+        this.checkUserSetting = (inData, callback) => {
             try {
                 var cfg = {
-                    host: dockerEnv.main_ip,
-                    port : parseInt(dockerEnv.siteConfig.unidx * 10000) + parseInt(dockerEnv.siteConfig.docker.ports[0]),
+                    host: inData.dockerEnv.main_ip,
+                    port : parseInt(dockerEnv.siteConfig.unidx * 10000) + parseInt(inData.dockerEnv.siteConfig.docker.ports[0]),
                     user: 'root',
-                    password: dockerEnv.rootKey.key,
+                    password: inData.dockerEnv.rootKey.key,
                     multipleStatements: true
                 };
                 var connection = MYSQL.createConnection(cfg);
