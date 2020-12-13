@@ -6,7 +6,7 @@
             MYSQL = require(__dirname + '/vendor/mysql/node_modules/mysql');
         
         this.run = (dockerEnv) => {
-            var cfg = {
+            var cfg = {78
                 host: dockerEnv.main_ip,
                 port : parseInt(dockerEnv.siteConfig.unidx * 10000) + parseInt(dockerEnv.siteConfig.docker.ports[0]),
                 user: 'root',
