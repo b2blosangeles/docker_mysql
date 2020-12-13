@@ -7,7 +7,7 @@
         
         this.run = (dockerEnv) => {
             try {
-                var cfg = {78
+                var cfg = {
                     host: dockerEnv.main_ip,
                     port : parseInt(dockerEnv.siteConfig.unidx * 10000) + parseInt(dockerEnv.siteConfig.docker.ports[0]),
                     user: 'root',
