@@ -10,7 +10,7 @@
             return true;
             var cfg = {
                 host: dockerEnv.main_ip,
-                port : dockerEnv.port,
+                port : (dockerEnv.siteConfig.unidx * 10000) + dockerEnv.siteConfig.docker.ports[0],
                 user: 'root',
                 password: dockerEnv.rootKey.key,
                 multipleStatements: true
