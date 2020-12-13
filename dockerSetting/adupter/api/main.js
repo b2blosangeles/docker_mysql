@@ -38,7 +38,7 @@
             try {
                 var cfg = {
                     host: inData.dockerEnv.main_ip,
-                    port : parseInt(dockerEnv.siteConfig.unidx * 10000) + parseInt(inData.dockerEnv.siteConfig.docker.ports[0]),
+                    port : parseInt(inData.dockerEnv.siteConfig.unidx * 10000) + parseInt(inData.dockerEnv.siteConfig.docker.ports[0]),
                     user: 'root',
                     password: inData.dockerEnv.rootKey.key,
                     multipleStatements: true
