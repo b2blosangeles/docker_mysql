@@ -8,7 +8,7 @@
         this.run = (dockerEnv) => {
             var cfg = {
                 host: dockerEnv.main_ip,
-                port : parserInt(dockerEnv.siteConfig.unidx * 10000) + parserInt(dockerEnv.siteConfig.docker.ports[0]),
+                port : parseInt(dockerEnv.siteConfig.unidx * 10000) + parseInt(dockerEnv.siteConfig.docker.ports[0]),
                 user: 'root',
                 password: dockerEnv.rootKey.key,
                 multipleStatements: true
