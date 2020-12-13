@@ -24,7 +24,7 @@
                     callback((error) ? error : results);
                 });
             } catch(e) {
-                callback(e.message);
+                callback(__dirname + ':' + e.message);
             }
         }
     }
