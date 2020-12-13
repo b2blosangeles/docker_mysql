@@ -5,6 +5,9 @@
             CP = new crowdProcess(),
             MYSQL = require(__dirname + '/vendor/mysql/node_modules/mysql');
         
+        this.call = (opt, dockerEnv) => {
+            me[opt](dockerEnv);
+        }      
         this.run = (dockerEnv) => {
             try {
                 var cfg = {
