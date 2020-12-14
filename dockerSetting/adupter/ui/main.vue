@@ -1,7 +1,7 @@
 <template>
     <div class="adupterBody border border-info br-3 m-1 p-3 rounded-lg alert-info">  
       adupter body <button class="btn btn-warning" v-if="!isAppUserReady()">Add User</button>
-      -->{{plugin-path}}
+      -->{{pluginPath}}<--
       <hr/>
       <niu-bi></niu-bi>
       <hr/>
@@ -18,7 +18,7 @@ module.exports = {
         return {
             root :  this.$parent.root,
             appUserList : [],
-            me.pluginPath : this.plugin_path
+            pluginPath : this.plugin_path
         }
     },
     mounted () {
