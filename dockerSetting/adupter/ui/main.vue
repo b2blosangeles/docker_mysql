@@ -1,7 +1,7 @@
 <template>
     <div class="adupterBody border border-info br-3 m-1 p-3 rounded-lg alert-info">  
       adupter body <button class="btn btn-warning" v-if="!isAppUserReady()">Add User</button>
-      -->{{pluginPath}}<--
+      -->{{plugin_path}}<--
       <hr/>
       <niu-bi></niu-bi>
       <hr/>
@@ -13,12 +13,12 @@
  
 <script>
 module.exports = {
-    props : ['item', 'pluginpath'],
+    props : ['item', 'plugin_path'],
     data: function() {
         return {
             root :  this.$parent.root,
             appUserList : [],
-            pluginPath : this.pluginpath
+            pluginPath : this.plugin_path
         }
     },
     mounted () {
