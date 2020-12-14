@@ -27,6 +27,7 @@ module.exports = {
         // '/_dockerAdupter/api/database/db1/main.js'
         let url = me.pluginPath + '/main.js'
         me.getAllDatabase(url);
+        VUEApp.dynamicLoadComponent({niuBi : url}, me);
     },
     methods :{
         _get(url, param, calback) {
@@ -61,7 +62,7 @@ module.exports = {
     },
     components: VUEApp.loadComponents({
         LOAD    : {
-           'niuBi'   : this.url
+         //  'niuBi'   : this.url
         }, 
         TPL :{
         }
