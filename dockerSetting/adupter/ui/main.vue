@@ -23,7 +23,7 @@ module.exports = {
     mounted () {
         let me = this;
         // '/_dockerAdupter/api/database/db1/main.js'
-        let url = me.pluginPath + '/api/main.js';
+        let url = me.plugin_path + '/api/main.js';
          console.log('---url---->');
          console.log(url);
         me.getAllDatabase(url);
