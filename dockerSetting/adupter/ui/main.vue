@@ -28,7 +28,7 @@ module.exports = {
          console.log(url);
         me.getAllDatabase(url);
         console.log(me.plugin_path + '/niuBi.vue');
-       //  VUEApp.dynamicLoadComponent({niuBi : me.plugin_path + '/niuBi.vue'}, me);
+        VUEApp.dynamicLoadComponent({niuBB : me.plugin_path + '/niuBi.vue'}, me);
     },
     methods :{
         _get(url, param, calback) {
@@ -63,7 +63,6 @@ module.exports = {
     },
     components: VUEApp.loadComponents({
         LOAD    : {
-           'niuBB'   : this.plugin_path + '/niuBi.vue'
         }, 
         TPL :{
         }
