@@ -3,7 +3,7 @@
       adupter body <button class="btn btn-warning" v-if="!isAppUserReady()">Add User</button>
       -->{{plugin_path}}<--
       <hr/>
-      <niu-bi></niu-bi>
+      <niu-bi></niu-bi>==<niu-b-b></niu-b-b>
       <hr/>
       ==>{{item}}<==
       <hr/>
