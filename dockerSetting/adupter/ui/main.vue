@@ -13,12 +13,12 @@
  
 <script>
 module.exports = {
-    props : ['item', 'plugin-path'],
+    props : ['item', 'plugin_path'],
     data: function() {
         return {
             root :  this.$parent.root,
             appUserList : [],
-            
+            me.pluginPath : this.plugin_path
         }
     },
     mounted () {
