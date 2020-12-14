@@ -1,14 +1,9 @@
 <template>
-    <div class="adupterBody border border-info br-3 m-1 p-3 rounded-lg alert-info">  
-      adupter body <button class="btn btn-warning" v-if="!isAppUserReady()">Add User</button>
-      -->{{plugin_path}}<--
-      <hr/>
-      <niu-bi></niu-bi>
-      <hr/>
-      ==>{{item}}<==
-      <hr/>
-      {{appUserList}}
+    <div class="adupterBody border border-info br-3 m-1 p-3 rounded-lg alert-info"> 
+      <user-form v-if="!isUserAdded()"></user-form>
+      <span v-if="isUserAdded()">User ready!</span>
     </div>
+    {{appUserList}}
 </template>
  
 <script>
@@ -17,16 +12,26 @@ module.exports = {
     data: function() {
         return {
             root :  this.$parent.root,
-            appUserList : []
+            hasDoneSetup : false,
+            appUserList : [],
+            serverConfig : {
+                users : {}
+            }
         }
     },
     mounted () {
         let me = this;
         let url = me.plugin_path + '/api/main.js';
-        me.getAllDatabase(url);
-        VUEApp.dynamicLoadComponent({niuBi : me.plugin_path + '/ui/niuBi.vue'}, me);
+        console.log(me.item);
+       me.getAllUsers();
+       VUEApp.dynamicLoadComponent({userForm : me.plugin_path + '/ui/userForm.vue'}, me);
+       me.$forceUpdate();
     },
     methods :{
+        isUserAdded() {
+            let me = this;
+            return (me.appUserList.length) ? true : false;
+        },
         _get(url, param, calback) {
             $.ajax({
                 type: 'GET',
@@ -43,17 +48,28 @@ module.exports = {
                 dataType: 'JSON'
             });
         },
-        _post() {
+        _post(url, data, calback) {
+            $.ajax({
+                type: 'POST',
+                url:url,
+                data: data,
+                success: function(result) {
+                    calback(result);
+                },
+                error: function (jqXHR, textStatus, errorThrown) { 
+                   calback(null)
+                },
+                dataType: 'JSON'
+            });
         },
         isAppUserReady () {
-           // return false;
            return (!this.appUserList || !this.appUserList.length) ?  false : true;
         },
-        getAllDatabase(url) {
+        getAllUsers() {
             let me = this;
-            me._get(url, {}, function(data) {
-               // console.log(data);
-                me.appUserList = data;
+            let url = me.plugin_path + '/api/main.js';
+            me._post(url, {cmd : 'getAppUser'}, function(data) {
+              //  me.appUserList = data;
             });
         }
     },
