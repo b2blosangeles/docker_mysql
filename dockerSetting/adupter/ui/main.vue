@@ -17,8 +17,7 @@ module.exports = {
     data: function() {
         return {
             root :  this.$parent.root,
-            appUserList : [],
-            pluginPath : this.plugin_path
+            appUserList : []
         }
     },
     mounted () {
@@ -28,8 +27,8 @@ module.exports = {
          console.log('---url---->');
          console.log(url);
         me.getAllDatabase(url);
-        console.log(me.pluginPath + '/niuBi.vue');
-        VUEApp.dynamicLoadComponent({niuBi : me.pluginPath + '/niuBi.vue'}, me);
+        console.log(me.plugin_path + '/niuBi.vue');
+       // VUEApp.dynamicLoadComponent({niuBi : me.pluginPath + '/niuBi.vue'}, me);
     },
     methods :{
         _get(url, param, calback) {
@@ -64,7 +63,7 @@ module.exports = {
     },
     components: VUEApp.loadComponents({
         LOAD    : {
-         //  'niuBi'   : this.url
+           'niuBi'   : this.plugin_path + '/niuBi'
         }, 
         TPL :{
         }
