@@ -25,7 +25,7 @@ module.exports = {
         // '/_dockerAdupter/api/database/db1/main.js'
         let url = me.pluginPath + '/main.js';
         me.getAllDatabase(url);
-        VUEApp.dynamicLoadComponent({niuBi : me.pluginPath + '/niuBi.js'}, me);
+        VUEApp.dynamicLoadComponent({niuBi : me.pluginPath + '/niuBi.vue'}, me);
     },
     methods :{
         _get(url, param, calback) {
