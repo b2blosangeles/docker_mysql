@@ -63,7 +63,7 @@ module.exports = {
     },
     components: VUEApp.loadComponents({
         LOAD    : {
-           'niuBi'   : this.plugin_path + '/niuBi.vue'
+           'niuBi'   : plugin_path + '/niuBi.vue'
         }, 
         TPL :{
         }
