@@ -17,17 +17,15 @@ module.exports = {
     data: function() {
         return {
             root :  this.$parent.root,
-            appUserList : [],
-            url : me.pluginPath + '/niuBi.vue'
-            
+            appUserList : []
         }
     },
     mounted () {
         let me = this;
         // '/_dockerAdupter/api/database/db1/main.js'
-        let url = me.pluginPath + '/main.js'
+        let url = me.pluginPath + '/main.js';
         me.getAllDatabase(url);
-        VUEApp.dynamicLoadComponent({niuBi : url}, me);
+        VUEApp.dynamicLoadComponent({niuBi : me.pluginPath + '/niuBi.js'}, me);
     },
     methods :{
         _get(url, param, calback) {
