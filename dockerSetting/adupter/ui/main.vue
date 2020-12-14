@@ -27,8 +27,8 @@ module.exports = {
          console.log('---url---->');
          console.log(url);
         me.getAllDatabase(url);
-        console.log(me.plugin_path + '/niuBi.vue');
         VUEApp.dynamicLoadComponent({niuBB : me.plugin_path + '/niuBi.vue'}, me);
+        VUEApp.dynamicLoadComponent({niuBi : me.plugin_path + '/niuBi.vue'}, me);
     },
     methods :{
         _get(url, param, calback) {
