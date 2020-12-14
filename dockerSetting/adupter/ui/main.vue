@@ -45,7 +45,7 @@ module.exports = {
         },
         isAppUserReady () {
            // return false;
-           return (this.appUserList.length) ?  true : false;
+           return (!this.appUserList || !this.appUserList.length) ?  false : true;
         },
         getAllDatabase(url) {
             let me = this;
