@@ -1,9 +1,13 @@
 <template>
-    <div class="adupterBody border border-info br-3 m-1 p-3 rounded-lg alert-info"> 
-      <user-form v-if="!isUserAdded()"></user-form>
-      <span v-if="isUserAdded()">User ready!</span>
-    </div>
-    {{appUserList}}
+    <span>
+        <!--div class="adupterBody border border-info br-3 m-1 p-3 rounded-lg alert-info"--> 
+            <user-form v-if="!isUserAdded()"></user-form>
+            <span v-if="isUserAdded()">App User ready!
+                <a class="btn btn-sm btn-warning m-1"  href="JavaScript:void(0)" v-on:click="removeAppUser()">Remove App User</a>
+            </span>
+        <!--/div-->
+        {{/*appUserList*/}}
+    </span>    
 </template>
  
 <script>
@@ -13,10 +17,7 @@ module.exports = {
         return {
             root :  this.$parent.root,
             hasDoneSetup : false,
-            appUserList : [],
-            serverConfig : {
-                users : {}
-            }
+            appUserList : []
         }
     },
     mounted () {
@@ -68,10 +69,25 @@ module.exports = {
         getAllUsers() {
             let me = this;
             let url = me.plugin_path + '/api/main.js';
-            me._post(url, {cmd : 'getAppUser'}, function(data) {
-              //  me.appUserList = data;
+            me._post(url, {cmd : 'getAppUsers'}, function(data) {
+                me.appUserList = data;
+            });
+        },
+       removeAppUser() {
+            let me = this;
+            let url = me.plugin_path + '/api/main.js';
+            me._post(url, {cmd : 'removeAppUser'}, function(data) {
+                me.getAllUsers();
+            });
+        },
+       addUser(postData) {
+            let me = this;
+            let url = me.plugin_path + '/api/main.js';
+            me._post(url, {cmd : 'addUser', postData: postData}, function(data) {
+                me.getAllUsers();
             });
         }
+
     },
     components: VUEApp.loadComponents({
         LOAD    : {
