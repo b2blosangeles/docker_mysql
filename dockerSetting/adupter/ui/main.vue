@@ -11,7 +11,7 @@
  
 <script>
 module.exports = {
-    props : ['item', 'pluginpath'],
+    props : ['item', 'plugin-path'],
     data: function() {
         return {
             root :  this.$parent.root,
