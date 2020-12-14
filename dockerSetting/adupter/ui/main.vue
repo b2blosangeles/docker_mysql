@@ -17,7 +17,9 @@ module.exports = {
     data: function() {
         return {
             root :  this.$parent.root,
-            appUserList : []
+            appUserList : [],
+            url : me.pluginPath + '/niuBi.vue'
+            
         }
     },
     mounted () {
@@ -59,7 +61,7 @@ module.exports = {
     },
     components: VUEApp.loadComponents({
         LOAD    : {
-           'niuBi'   : this.parent.pluginPath + '/niuBi.vue'
+           'niuBi'   : this.url
         }, 
         TPL :{
         }
