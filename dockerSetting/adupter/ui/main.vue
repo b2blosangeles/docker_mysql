@@ -23,10 +23,9 @@ module.exports = {
     mounted () {
         let me = this;
         let url = me.plugin_path + '/api/main.js';
-        console.log(me.item);
-       me.getAllUsers();
-       VUEApp.dynamicLoadComponent({userForm : me.plugin_path + '/ui/userForm.vue'}, me);
-       me.$forceUpdate();
+        me.getAllUsers();
+        VUEApp.dynamicLoadComponent({userForm : me.plugin_path + '/ui/userForm.vue'}, me);
+        me.$forceUpdate();
     },
     methods :{
         isUserAdded() {
