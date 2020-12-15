@@ -70,7 +70,7 @@ module.exports = {
       submitAddUser() {
         var me = this;
         if (me.formValidation()) {
-          me.$parent.addUser();
+          me.$parent.addUser(me.form);
         }
       }
     }
