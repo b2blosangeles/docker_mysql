@@ -70,6 +70,7 @@ module.exports = {
             let url = me.plugin_path + '/api/main.js';
             me._post(url, {cmd : 'getAppUsers'}, function(data) {
                 me.appUserList = data;
+                me.$forceUpdate();
             });
         },
        removeAppUser() {
