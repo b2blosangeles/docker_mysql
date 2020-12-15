@@ -47,8 +47,7 @@
                 sql_str += 'GRANT ALL PRIVILEGES ON * . * TO "appUser"@"%"; FLUSH PRIVILEGES;';
                 connection.query(sql_str, function (error, results, fields) {
                     connection.end();
-                    callback(requestData);
-                   // callback((error) ? error : results);
+                    callback((error) ? error : results);
                 });
             } catch(e) {
                 callback(__dirname + ':' + e.message);
