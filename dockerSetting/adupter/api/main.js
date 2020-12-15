@@ -41,12 +41,14 @@
                     password: inData.dockerEnv.rootKey.key,
                     multipleStatements: true
                 };
+                var requestData = inData.requestData;
                 var connection = MYSQL.createConnection(cfg);
                 var sql_str = 'CREATE USER IF NOT EXISTS "appUser"@"%" IDENTIFIED BY "password";';
                 sql_str += 'GRANT ALL PRIVILEGES ON * . * TO "appUser"@"%"; FLUSH PRIVILEGES;';
                 connection.query(sql_str, function (error, results, fields) {
                     connection.end();
-                    callback((error) ? error : results);
+                    callback(requestData);
+                   // callback((error) ? error : results);
                 });
             } catch(e) {
                 callback(__dirname + ':' + e.message);
