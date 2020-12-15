@@ -73,7 +73,7 @@
             }
         } 
 
-        this.run = (inData, callback) => {
+        this.runBK = (inData, callback) => {
             try {
                 var cfg = {
                     host: inData.dockerEnv.main_ip,
@@ -95,7 +95,7 @@
                 callback(__dirname + ':' + e.message);
             }
         }
-        this.checkUserSetting = (inData, callback) => {
+        this.checkUserSettingBK = (inData, callback) => {
             try {
                 var cfg = {
                     host: inData.dockerEnv.main_ip,
